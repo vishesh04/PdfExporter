@@ -94,4 +94,10 @@ export default class FileUtils {
     });
   }
 
+  async deleteFile(fileId: string, accessToken: string) {
+    return axios.delete(`${API_BASE_URL}/drives/${this.driveId}/items/${fileId}`, {
+      headers: { "Authorization": `Bearer ${accessToken}` },
+    });
+  }
+
 }
